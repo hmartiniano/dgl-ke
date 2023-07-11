@@ -507,7 +507,12 @@ class KEModel(object):
                     'MR': float(ranking),
                     'HITS@1': 1.0 if ranking <= 1 else 0.0,
                     'HITS@3': 1.0 if ranking <= 3 else 0.0,
-                    'HITS@10': 1.0 if ranking <= 10 else 0.0
+                    'HITS@5': 1.0 if ranking <= 5 else 0.0,
+                    'HITS@10': 1.0 if ranking <= 10 else 0.0,
+                    'HITS@50': 1.0 if ranking <= 50 else 0.0,
+                    'HITS@100': 1.0 if ranking <= 100 else 0.0,
+                    'HITS@500': 1.0 if ranking <= 500 else 0.0,
+                    'HITS@1000': 1.0 if ranking <= 1000 else 0.0,
                 })
         else:
             argsort = F.argsort(scores, dim=1, descending=True)
